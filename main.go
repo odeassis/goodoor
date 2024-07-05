@@ -1,5 +1,7 @@
 package main
 
+import "github.com/odeassis/goodoor/routes"
+
 func main() {
-	println("Hello word!")
+	routes.Initialize()
 }
