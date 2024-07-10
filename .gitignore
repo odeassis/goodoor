@@ -1,1 +1,10 @@
-goodoor
+api_client
+
+*.exe
+*.dll
+*.so
+*.dylib
+
+*.test
+
+*.out
