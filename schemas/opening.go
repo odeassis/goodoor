@@ -14,6 +14,7 @@ type Opening struct {
 	Location string
 	Remote   bool
 	Link     string
+	Salary   int64
 }
 
 type OpeningResponse struct {
@@ -24,6 +25,7 @@ type OpeningResponse struct {
 	Location  string         `json: "location"`
 	Remote    bool           `json: "remote"`
 	Link      string         `json: "link"`
+	Salary    int64          `json: "salary"`
 	CreatedAt time.Time      `json: "createdAt"`
 	UpdatedAt time.Time      `json: "updatedAt"`
 	DeletedAt gorm.DeletedAt `json: "deletedAt, omitempty"`
