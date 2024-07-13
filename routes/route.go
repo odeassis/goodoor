@@ -3,13 +3,15 @@ package routes
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/odeassis/goodoor/handler"
+	swaggerfiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-func initializeRoutes(routes *gin.Engine) {
+func initializeRoutes(router *gin.Engine) {
 
 	handler.Init()
 
-	v1 := routes.Group("/api/v1")
+	v1 := router.Group("/api/v1")
 
 	v1.GET("/opening", handler.ShowOpening)
 
@@ -21,4 +23,5 @@ func initializeRoutes(routes *gin.Engine) {
 
 	v1.GET("/openings", handler.ListOpenings)
 
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 }
