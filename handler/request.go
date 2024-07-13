@@ -48,3 +48,21 @@ func (c *CreateOpeningRequest) Validate() error {
 
 	return nil
 }
+
+type UpdateOpeningRequest struct {
+	Title    string `json:"title"`
+	Role     string `json:"role"`
+	Company  string `json:"company"`
+	Location string `json:"location"`
+	Remote   *bool  `json:"remote"`
+	Link     string `json:"link"`
+	Salary   int64  `json:"salary"`
+}
+
+func (u *UpdateOpeningRequest) Validate() error {
+	if u.Title != "" || u.Role != "" || u.Company != "" || u.Location != "" || u.Remote != nil || u.Link != "" || u.Salary > 0 {
+		return nil
+	}
+
+	return fmt.Errorf("at last one valid field must be provider")
+}
