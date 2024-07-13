@@ -8,6 +8,18 @@ import (
 	"github.com/odeassis/goodoor/schemas"
 )
 
+// @BasePath /api/v1
+//
+// @Description Update a opening job by ID
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening identification"
+// @Param opening body UpdateOpeningRequest true "Opening data to Update"
+// @Success 200 {object} OpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Router /opening [put]
 func UpdateOpening(ctx *gin.Context) {
 	request := UpdateOpeningRequest{}
 
