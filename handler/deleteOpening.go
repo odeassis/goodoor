@@ -8,6 +8,17 @@ import (
 	"github.com/odeassis/goodoor/schemas"
 )
 
+// @BasePath /api/v1
+//
+// @Description Delete a opening job by ID
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening identification"
+// @Success 200 {object} OpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Router /opening [delete]
 func DeleteOpening(ctx *gin.Context) {
 	id := ctx.Query("id")
 
