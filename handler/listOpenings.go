@@ -7,6 +7,15 @@ import (
 	"github.com/odeassis/goodoor/schemas"
 )
 
+// @BaseParth /api/v1
+//
+// @Description Show all openings jobs
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Success 200 {object} ListOpeningResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /openings [get]
 func ListOpenings(ctx *gin.Context) {
 	opening := []schemas.Opening{}
 
