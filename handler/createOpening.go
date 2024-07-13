@@ -7,6 +7,17 @@ import (
 	"github.com/odeassis/goodoor/schemas"
 )
 
+// @BasePath /api/v1
+//
+// @Description Create a new job opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param request body CreateOpeningRequest true "Resquest body"
+// @Success 200 {object} OpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [post]
 func CreateOpening(ctx *gin.Context) {
 
 	request := CreateOpeningRequest{}
